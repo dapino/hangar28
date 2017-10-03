@@ -1,0 +1,29 @@
+{
+  "name": "hangar28",
+  "version": "1.0.0",
+  "description": "Website redesign for hangar28.net, a car detailing business",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dapino/hangar28.git"
+  },
+  "keywords": [
+    "web",
+    "design",
+    "illustration",
+    "car",
+    "detailing"
+  ],
+  "author": "dapino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dapino/hangar28/issues"
+  },
+  "homepage": "https://github.com/dapino/hangar28#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
