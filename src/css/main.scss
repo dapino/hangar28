@@ -4,20 +4,375 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.hidden{
+    opacity: 0;
+    display: none;
+}
+.smooth{
+    transition: all 1s ease;
+    &_slow{
+        transition: all 1.5s ease;
+    }
+    &_verySlow{
+        transition: all 15s ease;
+    }
+}
+
+.btn{
+   color:darken(#FF3D0A, 75%);
+   background-color: darken(rgba(255,255,255,0.4), 50%);
+   padding: 1em;
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 100;
+   border:  4px solid darken(#FF3D0A, 45%);
+   display:block;
+   margin: 2em auto;
+   max-width: 300px;
+   text-align: center;
+   border-radius: 5px;
+   box-shadow: 0 3px 6px 2px rgba(0,0,0,0.3);
+   transform: rotateX(0deg);
+   transition: all .3s ease;
+   &:hover{
+       background-color: #FF3D0A ;
+       box-shadow: 0 2px 5px 1px rgba(0,0,0,0.5);
+       border:  4px solid #FF3D0A;
+       color: white;
+   }
+}
+
 .car{
-    background: red;
-    height: 200px;
-    width: 120px;
+    background-size: contain;
+    height: 350px;
+    width: 156px;
     position: fixed;
     top: 50%;
-    margin-top: -100px;
+    margin-top: -175px;
     left: 50%;
-    margin-left: - 75px;
+    margin-left: -78px;
     z-index: 99;
+    text-align: center;
+    opacity: 1;
+    @extend .smooth_slow;
+    img{
+        filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6));
+        height: 100%;
+        position: absolute;
+        left: 0;
+    }
+    &.hide{
+        top: -300px;
+    }
+    &.zoom{
+        transform: scale(2);
+        top: 10%;
+    }
+    .dirt{
+        opacity: 0;
+        left: 5%;
+        top: 5%;
+        bottom: 5%;
+        height: 90%;
+        width: 87%;
+        @extend .smooth_slow;
+    }
+    .dirt_1{
+        opacity: 0;
+        left: 5%;
+        top: 5%;
+        bottom: 5%;
+        height: 90%;
+        width: 87%;
+        transform: rotate(180deg);
+        @extend .smooth_slow;
+    }
+
+    &.dirty{
+        .dirt{
+            opacity: 1;
+        }
+    }
+    &.dirty_1{
+        .dirt_1{
+            opacity: 1;
+        }
+    }
+}
+
+.mainLogo{
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left:50%;
+    margin-left: -100px;
+    width: 200px;
+    height: 130px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.4);
+    border-radius: 0 0 50% 50%;
+    overflow: hidden;
+    @extend .smooth;
+    &.small{
+        width: 150px;
+        height: 100px;
+        margin-left: -75px;
+        img{
+            margin-top: -30px;
+        }
+    }
+    img{
+        width: 100%;
+        margin-top: -40px;
+        @extend .smooth;
+    }
+}
+
+.videoIntro{
+    margin: auto;
+    display: block;
+    &Cont{
+        margin-top: 160px;
+        display: inline-block;
+        box-shadow: 0 4px 12px 1px black;
+    }
+}
+
+.section{
+    &_0{
+        background-image: url(./assets/bg-1.jpg);
+        text-align: center;
+    }
+    &_1{
+        background-image: url(./assets/bg-2.jpg);
+    }
+    &_2{
+        background-image: url(./assets/bg-3.jpg);
+    }
+    &_3{
+        background-image: url(./assets/bg-4.jpg);
+    }
+    &_4{
+        background-image: url(./assets/bg-5.jpg);
+    }
+    &_5{
+        background-image: url(./assets/bg-6.jpg);
+    }
+    &_6{
+        background-image: url(./assets/bg-7.jpg);
+    }
+    &_7{
+        background-image: url(./assets/bg-8.jpg);
+    }
+    &_8{
+        background-image: url(./assets/bg-2.jpg);
+        background-size: 150%;
+        @extend .smooth;
+        &.active{
+            background-size: 200%;
+        }
+    }
+    
 }
 
 .process{
-    background: #6892AA;
-    border: 3px solid white;
     height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+    @extend .smooth;
+    &Content{
+        width: 25%;
+        height: auto;
+        padding: 5em 3em 3em;
+        background-color: rgba(255,255,255,0.1);
+        margin-left: -500px;
+        @extend .smooth;
+    }
+    &Title{
+        font-weight: 900;
+    }
+    &Icon{
+        display: block;
+        margin-bottom: 1em;
+        img{
+            width: 60px;
+        }
+    }
+    &Description{
+        font-weight: 100;
+    }
+    &Elements{
+        opacity: 0
+    }
+    &Scene{
+        
+        .imgAsset{
+            position: absolute;
+            @extend .smooth;
+            img{
+                height: 100%;
+            }
+            &.man{
+                height: 90px;
+                right: 8%;
+                filter: drop-shadow(-10px 0 5px rgba(0,0,0,0.4));
+                @extend .smooth_slow;
+            }
+            &.machine,
+            &.table{
+                right: 15%;
+                filter: drop-shadow(-10px 0 5px rgba(0,0,0,0.4));
+            }
+        }
+    }
+    &.active{
+        opacity: 1;
+        .processContent{
+            margin-left:0;
+        }
+        .processElements{
+            opacity: 1;
+        }
+
+    }
+}
+
+
+
+.receipt{
+    .manReceipt{
+        right: 8%;
+        top: 30%;
+    }
+    .tableReceipt{
+        right: 15%;
+        top: 60%;
+        height: 150px;
+    }
+    .coneReceiptRight{
+        top: 90%;
+        right: 30%;
+        height: 50px;
+    }
+    .coneReceiptLeft{
+        top: 90%;
+        left: 30%;
+        height: 50px;
+        
+    }
+    &.active{
+        .manReceipt{
+            right: 15%;
+        }
+    }
+ 
+}
+
+.washed{
+    .machineWash{
+        right: 15%;
+        top: 15%;
+        height: 300px;
+        transform: rotate(180deg);
+        .waterLoop{
+            height: 61px;
+            width: 280px;
+            background-image: url(./assets/water.png);
+            background-size: 100% 305px;
+            background-position: 0 0;
+            animation-name: water;
+            animation-duration: .6s;
+            animation-timing-function: steps(4);
+            animation-iteration-count: infinite;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            top: -16px;
+            right: -100%;
+        }
+    }
+}
+
+.shampoo{
+    .machineShampoo{
+        right: 15%;
+        top: 15%;
+        height: 220px;
+        .shampooLoop{
+            height: 122px;
+            width: 320px;
+            background-image: url(./assets/shampoo.png);
+            background-size: 100% 610px;
+            background-position: 0 0;
+            animation-name: shampoo;
+            animation-duration: .3s;
+            animation-timing-function: steps(2);
+            animation-iteration-count: infinite;
+            display: block;
+            position: absolute;
+            top: 22px;
+            left: -130%;
+            transform-origin: right;
+            transform: rotate(-45deg);
+        }
+    }
+    .manShampoo{
+        right: 8%;
+        top: 60%;
+    }
+    &.active{
+        .manShampoo{
+            right: 15%;
+        }
+    }
+}
+
+.decontamination{
+    .machinePaint{
+        right: 15%;
+        top: 15%;
+        height: 220px;
+    }
+    .manPaint{
+        right: 8%;
+        top: 60%;
+        height: 105px !important;
+        transform: rotate(230deg);
+    }
+    &.active{
+        .manPaint{
+            right: 35%;
+        }
+    }
+}
+
+@keyframes water {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 488px;
+    }
+    100%{
+        background-position: 0 0;
+
+    }
+}
+
+@keyframes shampoo {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 0 244px;
+    }
+    100%{
+        background-position: 0 0;
+
+    }
 }
