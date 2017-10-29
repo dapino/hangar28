@@ -21,13 +21,12 @@ gulp.task('assets', () => {
    return gulp.src('src/assets/*.*')
       .pipe(gulp.dest('./public/assets'));
 })
-    
 
 gulp.task('views', () => {
   return gulp.src('./src/views/*.pug')
     .pipe(pug())
     .pipe(plumber(plumberErrorHandler))
-    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(htmlmin({collapseWhitespace: false}))
     .pipe(gulp.dest('./public'))
     .pipe(livereload());
 });
@@ -64,5 +63,10 @@ gulp.task('watch', function() {
    gulp.watch('./src/css/*.scss', ['styles']);
    gulp.watch('./src/js/*.js', ['scripts']);
 });
+
+gulp.task('wp', function() {
+    return gulp.src('./public/**/*.*')
+    .pipe(gulp.dest('./HANGAR_WP_THEME'));
+ });
 
 gulp.task('default', [ 'assets', 'views', 'styles', 'scripts','watch']);

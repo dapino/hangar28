@@ -17,6 +17,9 @@ body{
     &_slow{
         transition: all 1.5s ease;
     }
+    &_medium{
+        transition: all 4.5s ease;
+    }
     &_verySlow{
         transition: all 15s ease;
     }
@@ -65,6 +68,22 @@ body{
         position: absolute;
         left: 0;
     }
+    .cleanCar{
+        opacity: 0;
+        @extend .smooth_slow;
+    }
+    .carNormal{
+        opacity: 1;
+        @extend .smooth_slow;
+    }
+    &.clean{
+        .carNormal{
+            opacity: 0;
+        }
+        .cleanCar{
+            opacity: 1
+        }
+    }
     &.hide{
         top: -300px;
     }
@@ -100,6 +119,30 @@ body{
     &.dirty_1{
         .dirt_1{
             opacity: 1;
+        }
+    }
+    .shine{
+        opacity: 0;
+        @extend .smooth_slow;
+        &_1{
+            left: 60%;
+            top: 85%;
+            height: 55px;
+        }
+        &_2{
+            left: 14%;
+            top: 47%;
+            height: 30px;
+        }
+        &_3{
+            left: 20%;
+            top: 5%;
+            height: 30px;
+        }
+    }
+    &.shining{
+        .shine{
+            opacity: 1
         }
     }
 }
@@ -175,6 +218,10 @@ body{
             background-size: 200%;
         }
     }
+    &_9{
+        background-image: url(./assets/bg-1.jpg);
+        text-align: center;
+    }
     
 }
 
@@ -228,6 +275,9 @@ body{
                 right: 15%;
                 filter: drop-shadow(-10px 0 5px rgba(0,0,0,0.4));
             }
+            &.element{
+                filter: drop-shadow(-1px 5px 5px rgba(0,0,0,0.4));
+            }
         }
     }
     &.active{
@@ -263,14 +313,12 @@ body{
         top: 90%;
         left: 30%;
         height: 50px;
-        
     }
     &.active{
         .manReceipt{
             right: 15%;
         }
     }
- 
 }
 
 .washed{
@@ -351,6 +399,77 @@ body{
     }
 }
 
+.brightness{
+    .manShine{
+        right: 8%;
+        top: 60%;
+        transform: rotate(180deg);
+    }
+    &.active{
+        .manShine{
+            right: 35%;
+        }
+    }
+}
+
+.protection{
+    .paint{
+        right: 15%;
+        top: 30%;
+    }
+    .manProtection{
+        right: 8%;
+        top: 60%;
+        transform: rotate(180deg);
+    }
+    &.active{
+        .manProtection{
+            right: 35%;
+        }
+    }
+}
+
+.inside{
+    .steerWheel{
+        right: 15%;
+        top: 20%;
+    }
+    .steerPanel{
+        right: 15%;
+        top: 40%;
+    }
+    .manInterior{
+        right: 8%;
+        top: 60%;
+    }
+    &.active{
+        .manInterior{
+            right: 35%;
+        }
+    }
+}
+
+.motor{
+    .motorTable{
+        right: 15%;
+        top: 20px;
+        height: 400px;
+    }
+ 
+    .manMotor{
+        top: 100%;
+        transform: rotate(-90deg);
+        right: 45%;
+    }
+    &.active{
+        .manMotor{
+            right: 45%;
+            height: 260px;
+            top: 60%;
+        }
+    }
+}
+
 @keyframes water {
     0% {
         background-position: 0 0;
@@ -374,5 +493,11 @@ body{
     100%{
         background-position: 0 0;
 
+    }
+}
+
+@media screen and (max-width: 728px) {
+    .car {
+        background-color: red;
     }
 }

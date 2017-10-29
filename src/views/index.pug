@@ -12,12 +12,16 @@ html(lang="en")
 
 
         .car#car.hide.dirty.dirty_1
-            img(src="./assets/car.png", alt="")#carNormal
+            img(src="./assets/car.png", alt="")#carNormal.carNormal
+            img(src="./assets/car_2@2x.png", alt="")#carNormal.cleanCar
             img(src="./assets/interior@2x.png", alt="")#carInterior.hidden
             img(src="./assets/motor@2x.png", alt="")#carMotor.hidden
             img(src="./assets/dirt@2x.png", alt="")#carDirty.dirt
             img(src="./assets/dirt@2x.png", alt="").dirt_1
             img(src="./assets/dirt@2x.png", alt="")#carDirty.dirt_1
+            img(src="./assets/shine@2x.png", alt="").shine_1.shine
+            img(src="./assets/shine@2x.png", alt="").shine_2.shine
+            img(src="./assets/shine@2x.png", alt="").shine_3.shine
         .mainLogo#mainLogo
             img(src="./assets/logo-hangar.jpg", alt="")
         main#fullpage
@@ -39,9 +43,9 @@ html(lang="en")
                         img(src="./assets/man-receipt@2x.png", alt="")
                     span.imgAsset.tableReceipt.table
                         img(src="./assets/table-receipt@2x.png", alt="")
-                    span.imgAsset.coneReceiptRight
+                    span.imgAsset.coneReceiptRight.element
                         img(src="./assets/cone@2x.png", alt="")
-                    span.imgAsset.coneReceiptLeft
+                    span.imgAsset.coneReceiptLeft.element
                         img(src="./assets/cone@2x.png", alt="")
                 .processContent
                     span.imgAsset.processIcon
@@ -64,7 +68,6 @@ html(lang="en")
                 //.slide
                     h3.processTitle Lavado
                     p.processDescription
-
 
             .section.section_3.process.shampoo#shampoo
                 .processScene
@@ -93,13 +96,11 @@ html(lang="en")
                     h3.processTitle Descontaminación y pulida
                     p.processDescription Una vez lavado el automóvil al que se le vaya a hacer cualquier tipo de proceso a su pintura, esta deberá ser descontaminada; trabajo que se logra pasando sobre esta, una arcilla fabricada especialmente para este tipo de trabajo. Con esta misma vamos a desprender todas las partículas que se han pegado a las superficie y que no salen con la simple lavada, generando pérdida de brillo y hasta la misma pérdida del color original. Con el propósito de conseguir el mejor brillo de un color, las piezas a tratar deben ser pulidas con cremas de diferente nivel abrasivo. Entre más deteriorada esté la pintura y su brillo, más abrasivo debería ser el producto a utilizar. Incluso se podría llegar a matizar el barniz que cubre el color con lija de granulo muy delgado, para así eliminar la capa quemada por el sol y el  paso de los años.
 
-
             .section.section_5.process.brightness#brillo
                 .processScene
-                    span.imgAsset.shine
-                        img(src="./assets/shine@2x.png", alt="")
+                   
                     span.imgAsset.man.manShine
-                        img(src="./assets/man-paint@2x.png", alt="")
+                        img(src="./assets/man-shine@2x.png", alt="")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-shine@2x.png", alt="")
@@ -108,7 +109,7 @@ html(lang="en")
 
             .section.section_6.process.protection#proteccion
                 .processScene
-                    span.imgAsset.paint
+                    span.imgAsset.paint.element
                         img(src="./assets/paint-cont@2x.png", alt="")
                     span.imgAsset.man.manProtection
                         img(src="./assets/man-protection@2x.png", alt="")
