@@ -9,10 +9,10 @@ if (mediaquery.matches) {
     function onWheelActions() {
         //inicio
         if (document.getElementById("inicio").classList.contains('active')){
-            document.getElementById("car").classList.add('dirty')
-            document.getElementById("car").classList.add('dirty_1')
             document.getElementById("mainLogo").classList.remove('small')
             document.getElementById("car").classList.add('hide')
+            document.getElementById("car").classList.add('dirty')
+            document.getElementById("car").classList.add('dirty_1')
             document.getElementById("car").classList.remove('clean')
         } else {
             document.getElementById("car").classList.remove('hide')
@@ -32,8 +32,8 @@ if (mediaquery.matches) {
         }
         //shampoo
         if (document.getElementById("shampoo").classList.contains('active')){
-            document.getElementById("car").classList.add('dirty_1')
             document.getElementById("car").classList.remove('dirty')
+            document.getElementById("car").classList.add('dirty_1')
             document.getElementById("car").classList.remove('clean')
         }
         //descontaminacion

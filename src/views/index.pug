@@ -24,6 +24,12 @@ html(lang="en")
             img(src="./assets/shine@2x.png", alt="").shine_3.shine
         .mainLogo#mainLogo
             img(src="./assets/logo-hangar.jpg", alt="")
+        .overlay#overlay
+        .contactSection#contactSection
+            h2 Reserva con nosotros
+            h2 <?php echo get_theme_mod( 'titulo_reserva' ); ?>
+            p.contactContent <?php echo do_shortcode( '[contact-form-7 id="271" title="Formulario de reserva"]' );?>
+
         main#fullpage
             .section.section_0.process.intro#inicio
                 .processScene.videoIntroCont
@@ -50,8 +56,10 @@ html(lang="en")
                 .processContent
                     span.imgAsset.processIcon
                         img(src="./assets/icon-receipt@2x.png", alt="")
-                    h3.processTitle Recibo
-                    p.processDescription Establecemos las necesidades y prioridades para su automovil ofreciendo una cotizacion muy aproximada a la definitiva. Agendamos una reunión para hacer una inspección visual de vehículo y determinar qué tipo de trabajo es el más apropiado, tipo de productos y maquinas que debemos utilizar para lograr los mejores resultados, y el tiempo que se tomará llevar acabo dicho trabajo.
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_recibo' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_recibo' ); ?>
+                    
+                    
 
                     //a(href='#').btn Reservar Ahora
             
@@ -63,11 +71,9 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-wash@2x.png", alt="")
-                    h3.processTitle Lavado
-                    p.processDescription El vehiculo que entra para un simple lavado, o a un lavado para posterior aplicarle cualquiera de nuestros procesos de embellecimiento, o restauración de pintura, recibe el mismo tratamiento. Se humedece  con agua pura, aplicando presión sobre las partes bajas donde más se acumulan agentes contaminantes como barro y tierra. 
-                //.slide
-                    h3.processTitle Lavado
-                    p.processDescription
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_lavado' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_lavado' ); ?>
+
 
             .section.section_3.process.shampoo#shampoo
                 .processScene
@@ -81,8 +87,10 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-shampoo@2x.png", alt="")
-                    h3.processTitle Shampoo
-                    p.processDescription Aplicamos shampoo con maquina, de arriba hacia abajo de manera tal que la suciedad de la parte inferior no contamine la superior. Con toallas de microfibra; se distribuye el shampoo en todo el carro, desprendiendo así la totalidad de los contaminantes. Finalmente se enjuaga y se seca utilizando una espátula de silicona que ayuda a que el agua escurra y asi mismo cualquier residuo de mugre aderido que pueda lastimar la pintura al pasar la toalla para secado. Toalla que se utilizará para secar en su totalidad el automovil. Cómo ultimo paso se soplan con aire a presión los puntos donde quede agua acumulada. Si el vehículo entró únicamente para lavado, se aplicará cera líquida para proteger la pintura de los rayos solares y partículas dañinas que se encuentran en el medio ambiente. 
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_shampoo' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_shampoo' ); ?>
+                    
+                    
 
             .section.section_4.process.decontamination#descontaminacion
                 .processScene
@@ -93,8 +101,10 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-paint@2x.png", alt="")
-                    h3.processTitle Descontaminación y pulida
-                    p.processDescription Una vez lavado el automóvil al que se le vaya a hacer cualquier tipo de proceso a su pintura, esta deberá ser descontaminada; trabajo que se logra pasando sobre esta, una arcilla fabricada especialmente para este tipo de trabajo. Con esta misma vamos a desprender todas las partículas que se han pegado a las superficie y que no salen con la simple lavada, generando pérdida de brillo y hasta la misma pérdida del color original. Con el propósito de conseguir el mejor brillo de un color, las piezas a tratar deben ser pulidas con cremas de diferente nivel abrasivo. Entre más deteriorada esté la pintura y su brillo, más abrasivo debería ser el producto a utilizar. Incluso se podría llegar a matizar el barniz que cubre el color con lija de granulo muy delgado, para así eliminar la capa quemada por el sol y el  paso de los años.
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_pintura' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_pintura' ); ?>
+                    
+                    
 
             .section.section_5.process.brightness#brillo
                 .processScene
@@ -104,8 +114,10 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-shine@2x.png", alt="")
-                    h3.processTitle Micro-rayones, brillo y encerado
-                    p.processDescription
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_brillo' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_brillo' ); ?>
+                    
+                    
 
             .section.section_6.process.protection#proteccion
                 .processScene
@@ -116,8 +128,10 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-protection@2x.png", alt="")
-                    h3.processTitle Protección de pintura
-                    p.processDescription
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_proteccion' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_proteccion' ); ?>
+                    
+                    
 
             .section.section_7.process.inside#interior
                 .processScene
@@ -130,8 +144,10 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-interior@2x.png", alt="")
-                    h3.processTitle Limpieza interior
-                    p.processDescription
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_interior' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_interior' ); ?>
+                    
+                    
 
             .section.section_8.process.motor#motor
                 .processScene
@@ -142,15 +158,9 @@ html(lang="en")
                 .processContent
                     span.processIcon
                         img(src="./assets/icon-motor@2x.png", alt="")
-                    h3.processTitle Embellecimiento de motor
-                    p.processDescription
-            
-            .section.section_9.process.booking#booking
-                .processContent
+                    h3.processTitle <?php echo get_theme_mod( 'titulo_motor' ); ?>
+                    p.processDescription <?php echo get_theme_mod( 'texto_motor' ); ?>
                     
-                    h3.processTitle Reservar
-
-            
                     
 
         script(type="text/javascript", src="main.js")

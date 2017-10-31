@@ -66,7 +66,7 @@ gulp.task('watch', function() {
 
 gulp.task('wp', function() {
     return gulp.src('./public/**/*.*')
-    .pipe(gulp.dest('./HANGAR_WP_THEME'));
+    .pipe(gulp.dest('./HANGAR_WP_THEME/newGulp'));
  });
 
 gulp.task('default', [ 'assets', 'views', 'styles', 'scripts','watch']);

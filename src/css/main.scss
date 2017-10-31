@@ -8,12 +8,20 @@ body{
     font-family: 'Fira Sans', sans-serif;
 }
 
+main{
+    max-width: 1366px;
+    margin: auto;
+}
+
 .hidden{
     opacity: 0;
     display: none;
 }
 .smooth{
     transition: all 1s ease;
+    &_fast{
+        transition: all .5s ease;
+    }
     &_slow{
         transition: all 1.5s ease;
     }
@@ -499,5 +507,35 @@ body{
 @media screen and (max-width: 728px) {
     .car {
         background-color: red;
+    }
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: black;
+    opacity: 0.8;
+    z-index: 998;
+    display: none;
+    &.visible{
+        display: block;
+    }
+}
+.contactSection {
+    position: absolute;
+    background: white;
+    top: 100%;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity: 0.9;
+    box-shadow: 0 0 8px 1px black;
+    z-index: 999;
+    @extend .smooth_fast;
+    &.visible{
+        top: 50%;
     }
 }
