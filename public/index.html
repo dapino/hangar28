@@ -12,30 +12,63 @@
     <div class="car hide dirty dirty_1" id="car"><img class="carNormal" src="./assets/car.png" alt="" id="carNormal"><img class="cleanCar" src="./assets/car_2@2x.png" alt="" id="carNormal"><img class="hidden" src="./assets/interior@2x.png" alt="" id="carInterior"><img class="hidden" src="./assets/motor@2x.png" alt="" id="carMotor"><img class="dirt" src="./assets/dirt@2x.png" alt="" id="carDirty"><img class="dirt_1" src="./assets/dirt@2x.png" alt=""><img class="dirt_1" src="./assets/dirt@2x.png" alt="" id="carDirty"><img class="shine_1 shine" src="./assets/shine@2x.png" alt=""><img class="shine_2 shine" src="./assets/shine@2x.png" alt=""><img class="shine_3 shine" src="./assets/shine@2x.png" alt=""></div>
     <div class="mainLogo" id="mainLogo"><img src="./assets/logo-hangar.jpg" alt=""></div>
     <div class="overlay" id="overlay"></div>
-    <div class="contactSection" id="contactSection">
+    <div class="contactSection" id="contactSection"><span class="close" id="closeContact"></span>
       <h2>Reserva con nosotros</h2>
       <h2><?php echo get_theme_mod( 'titulo_reserva' ); ?></h2>
-      <p class="contactContent"><?php echo do_shortcode( '[contact-form-7 id="271" title="Formulario de reserva"]' );?></p>
+      <div class="contactContent"><?php echo do_shortcode( '[contact-form-7 id="271" title="Formulario de reserva"]' );?></div>
+      <div class="contactContent">
+        <div class="wpcf7" id="wpcf7-f271-o1" role="form" lang="es-ES" dir="ltr">
+          <div class="screen-reader-response"></div>
+          <form class="wpcf7-form" action="/#wpcf7-f271-o1" method="post" novalidate="novalidate">
+            <div style="display: none">
+              <input type="hidden" name="_wpcf7" value="271">
+              <input type="hidden" name="_wpcf7_version" value="4.9">
+              <input type="hidden" name="_wpcf7_locale" value="es_ES">
+              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f271-o1">
+              <input type="hidden" name="_wpcf7_container_post" value="0">
+            </div>
+            <p>
+              <label>Nombre (requerido)<br><span class="wpcf7-form-control-wrap your-name">
+                  <input class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" type="text" name="your-name" value="" size="40" aria-required="true" aria-invalid="false"></span></label>
+            </p>
+            <p>
+              <label>Tu correo electrónico (requerido)<br><span class="wpcf7-form-control-wrap your-email">
+                  <input class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" type="email" name="your-email" value="" size="40" aria-required="true" aria-invalid="false"></span></label>
+            </p>
+            <p>
+              <label>Asunto<br><span class="wpcf7-form-control-wrap your-subject">
+                  <input class="wpcf7-form-control wpcf7-text" type="text" name="your-subject" value="" size="40" aria-invalid="false"></span></label>
+            </p>
+            <p>
+              <label>Mensaje<br><span class="wpcf7-form-control-wrap your-message">
+                  <textarea class="wpcf7-form-control wpcf7-textarea" name="your-message" cols="40" rows="10" aria-invalid="false"></textarea></span></label>
+            </p>
+            <p>
+              <input class="wpcf7-form-control wpcf7-submit" type="submit" value="Enviar">
+            </p>
+            <div class="wpcf7-response-output wpcf7-display-none"></div>
+          </form>
+        </div>
+      </div>
     </div>
     <main id="fullpage">
       <div class="section section_0 process intro" id="inicio">
         <div class="processScene videoIntroCont">
           <iframe class="videoIntro" width="560" height="315" src="https://www.youtube.com/embed/QfSkSEkKYqA?rel=0&amp;autoplay=0&amp;color=white&amp;loop=1&amp;controls=0" frameborder="0" allowfullscreen="allowfullscreen"> </iframe>
-        </div><a class="btn" href="#">Reservar Ahora</a>
+        </div><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
       </div>
       <div class="section section_1 process receipt" id="recibo">
         <div class="processScene"><span class="imgAsset man manReceipt"><img src="./assets/man-receipt@2x.png" alt=""></span><span class="imgAsset tableReceipt table"><img src="./assets/table-receipt@2x.png" alt=""></span><span class="imgAsset coneReceiptRight element"><img src="./assets/cone@2x.png" alt=""></span><span class="imgAsset coneReceiptLeft element"><img src="./assets/cone@2x.png" alt=""></span></div>
         <div class="processContent"><span class="imgAsset processIcon"><img src="./assets/icon-receipt@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_recibo' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_recibo' ); ?></p>
-          <!--a(href='#').btn Reservar Ahora-->
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_recibo' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_2 process washed" id="lavado">
         <div class="processScene"><span class="imgAsset machineWash machine"><span class="waterLoop"></span><img src="./assets/man-wash@2x.png" alt=""></span></div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-wash@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_lavado' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_lavado' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_lavado' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_3 process shampoo" id="shampoo">
@@ -45,43 +78,46 @@
         </div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-shampoo@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_shampoo' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_shampoo' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_shampoo' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_4 process decontamination" id="descontaminacion">
         <div class="processScene"><span class="imgAsset machinePaint machine"><img src="./assets/paint-machine@2x.png" alt=""></span><span class="imgAsset man manPaint"><img src="./assets/man-paint@2x.png" alt=""></span></div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-paint@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_pintura' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_pintura' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_pintura' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_5 process brightness" id="brillo">
         <div class="processScene"><span class="imgAsset man manShine"><img src="./assets/man-shine@2x.png" alt=""></span></div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-shine@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_brillo' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_brillo' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_brillo' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_6 process protection" id="proteccion">
         <div class="processScene"><span class="imgAsset paint element"><img src="./assets/paint-cont@2x.png" alt=""></span><span class="imgAsset man manProtection"><img src="./assets/man-protection@2x.png" alt=""></span></div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-protection@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_proteccion' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_proteccion' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_proteccion' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_7 process inside" id="interior">
         <div class="processScene"><span class="imgAsset steerWheel"><img src="./assets/interior-steer@2x.png" alt=""></span><span class="imgAsset steerPanel"><img src="./assets/interior-panel@2x.png" alt=""></span><span class="imgAsset man manInterior"><img src="./assets/man-interior@2x.png" alt=""></span></div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-interior@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_interior' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_interior' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_interior' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
       </div>
       <div class="section section_8 process motor" id="motor">
         <div class="processScene"><span class="imgAsset motorTable table"><img src="./assets/motor-table@2x.png" alt=""></span><span class="imgAsset man manMotor"><img src="./assets/man-motor@2x.png" alt=""></span></div>
         <div class="processContent"><span class="processIcon"><img src="./assets/icon-motor@2x.png" alt=""></span>
           <h3 class="processTitle"><?php echo get_theme_mod( 'titulo_motor' ); ?></h3>
-          <p class="processDescription"><?php echo get_theme_mod( 'texto_motor' ); ?></p>
+          <p class="processDescription"><?php echo get_theme_mod( 'texto_motor' ); ?></p><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a>
         </div>
+      </div>
+      <div class="section section_9 process booking" id="reserva">
+        <div class="processScene"><a class="btn bookingButton"><?php echo get_theme_mod( 'texto_boton' ); ?></a></div>
       </div>
     </main>
     <script type="text/javascript" src="main.js"></script>

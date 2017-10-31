@@ -14,8 +14,8 @@ main{
 }
 
 .hidden{
-    opacity: 0;
-    display: none;
+    opacity: 0 !important;
+    display: none !important;
 }
 .smooth{
     transition: all 1s ease;
@@ -49,6 +49,7 @@ main{
    box-shadow: 0 3px 6px 2px rgba(0,0,0,0.3);
    transform: rotateX(0deg);
    transition: all .3s ease;
+   cursor: pointer;
    &:hover{
        background-color: #FF3D0A ;
        box-shadow: 0 2px 5px 1px rgba(0,0,0,0.5);
@@ -91,6 +92,15 @@ main{
         .cleanCar{
             opacity: 1
         }
+    }
+    &.small{
+        height: 300px;
+        width: 130px;
+        position: fixed;
+        top: 50%;
+        margin-top: -150px;
+        left: 50%;
+        margin-left: -65px;
     }
     &.hide{
         top: -300px;
@@ -158,11 +168,11 @@ main{
 .mainLogo{
     position: fixed;
     top: 0;
-    z-index: 99;
+    z-index: 999;
     left:50%;
-    margin-left: -100px;
-    width: 200px;
-    height: 130px;
+    margin-left: -75px;
+    width: 150px;
+    height: 100px;
     box-shadow: 0 0 15px 0 rgba(0,0,0,0.4);
     border-radius: 0 0 50% 50%;
     overflow: hidden;
@@ -177,7 +187,7 @@ main{
     }
     img{
         width: 100%;
-        margin-top: -40px;
+        margin-top: -30px;
         @extend .smooth;
     }
 }
@@ -186,7 +196,7 @@ main{
     margin: auto;
     display: block;
     &Cont{
-        margin-top: 160px;
+        margin-top: 120px;
         display: inline-block;
         box-shadow: 0 4px 12px 1px black;
     }
@@ -241,7 +251,7 @@ main{
     opacity: 0.5;
     @extend .smooth;
     &Content{
-        width: 25%;
+        width: 30%;
         height: auto;
         padding: 5em 3em 3em;
         background-color: rgba(255,255,255,0.1);
@@ -477,6 +487,15 @@ main{
         }
     }
 }
+.booking{
+    .btn{
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        width: 300px;
+        margin-left: -150px;
+    }
+}
 
 @keyframes water {
     0% {
@@ -511,31 +530,88 @@ main{
 }
 
 .overlay{
-    position: absolute;
+    position: fixed;
     top: 0;
     left:0;
     right:0;
-    bottom:0;
+    bottom:400%;
     background: black;
-    opacity: 0.8;
+    opacity: 0;
     z-index: 998;
-    display: none;
+    transition: all .1s ease;
     &.visible{
-        display: block;
+        bottom: 0;
+        opacity: 0.8;
     }
 }
 .contactSection {
-    position: absolute;
-    background: white;
-    top: 100%;
-    left:0;
-    right:0;
+    position: fixed;
+    background: #eef;
+    top: 400%;
+    left:10%;
+    right:10%;
     bottom:0;
-    opacity: 0.9;
+    opacity: 0;
     box-shadow: 0 0 8px 1px black;
     z-index: 999;
-    @extend .smooth_fast;
+    padding: 2em ;
+    transition: all .5s ease;
+    overflow-y: auto;
     &.visible{
-        top: 50%;
+        top: 30%;
+        opacity: 0.9;
+    }
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 100;
+        margin-bottom: 1em;
+    }
+}
+
+.contactContent{
+    margin: auto;
+    display: block;
+    width: 60%;
+
+    input, textarea{
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 16px;
+        border: 0;
+        margin: 10px 0;
+        box-shadow: 0 0 3px 0 #999;
+    }
+    .wpcf7-submit{
+        @extend .btn;
+    }
+}
+
+.close{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    display: block;
+    opacity: 0.7;
+    cursor: pointer;
+    &:after,
+    &:before{
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 40px;
+        background: black;
+        @extend .smooth_fast;
+    }
+    &:before{
+        transform: rotate(-45deg);
+    }
+    &:after{
+        transform: rotate(45deg);
+    }
+    &:hover{
+        opacity: 1;
     }
 }

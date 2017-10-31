@@ -1,4 +1,5 @@
 var mediaquery = window.matchMedia("(min-width: 728px)");
+  
 
 if (mediaquery.matches) {
     fullpage.initialize('#fullpage', {
@@ -65,7 +66,36 @@ if (mediaquery.matches) {
             document.getElementById("carNormal").classList.remove('hidden')
             document.getElementById("carMotor").classList.add('hidden')
         }
+        //reserva
+        if (document.getElementById("reserva").classList.contains('active')){
+            openContact()
+            document.getElementById("car").classList.add('small')
+        } else {
+            document.getElementById("car").classList.remove('small')
+        }
     }
 } else {
     // mediaquery no es 600
+}
+
+var bookingButton = document.getElementsByClassName("bookingButton");
+var contactSection = document.getElementById('contactSection');
+var closeContactEl = document.getElementById('closeContact');
+var overlay = document.getElementById("overlay");
+
+
+var openContact = function() {
+    overlay.classList.add('visible')
+    contactSection.classList.add('visible')
+};
+
+var closeContact = function() {
+    overlay.classList.remove('visible')
+    contactSection.classList.remove('visible')
+};
+
+closeContactEl.addEventListener('click', closeContact, false) 
+
+for (var i = 0; i < bookingButton.length; i++) {
+    bookingButton[i].addEventListener('click', openContact, false);
 }

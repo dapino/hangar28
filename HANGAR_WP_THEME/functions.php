@@ -109,14 +109,28 @@ if ( ! function_exists( 'theme_setup' ) ) :
         'default' => 'reserva',
       ) );
 
+      $wp_customize->add_setting( 'texto_boton' , array(
+        'capability' => 'edit_theme_options',
+        'default' => 'boton',
+      ) );
+  
+      $wp_customize->add_control( 'texto_boton' , 
+      array(
+          'type'     => 'text',
+          'section'  => 'procesos',
+          'label'    => __( 'Texto boton', 'hangar_28' ),
+          'description' => __( '' ),
+        )
+    );
+
       $wp_customize->add_control( 'titulo_inicio' , 
       array(
           'type'     => 'text',
           'section'  => 'procesos',
           'label'    => __( 'Título Sección inicial', 'hangar_28' ),
           'description' => __( '' ),
-      )
-  );
+        )
+    );
   
       $wp_customize->add_control( 'titulo_recibo' , 
           array(
@@ -307,7 +321,7 @@ endif;// theme_setup
 if( !function_exists("theme_styles") ) {
   function theme_styles() {
     wp_register_style( 'fira', 'https://fonts.googleapis.com/css?family=Fira+Sans', array(), '1.0', 'all' );
-    wp_register_style( 'main-style', get_stylesheet_directory_uri() . '/style.css', array('fira'), '1.0', 'all' );
+    wp_register_style( 'main-style', get_stylesheet_directory_uri() . '/main.css?' . time() , array('fira'), '1.0', 'all' );
     wp_enqueue_style( 'main-style' );
     }
 }

@@ -26,9 +26,49 @@ html(lang="en")
             img(src="./assets/logo-hangar.jpg", alt="")
         .overlay#overlay
         .contactSection#contactSection
+            span.close#closeContact
             h2 Reserva con nosotros
             h2 <?php echo get_theme_mod( 'titulo_reserva' ); ?>
-            p.contactContent <?php echo do_shortcode( '[contact-form-7 id="271" title="Formulario de reserva"]' );?>
+            .contactContent <?php echo do_shortcode( '[contact-form-7 id="271" title="Formulario de reserva"]' );?>
+	
+            .contactContent
+                #wpcf7-f271-o1.wpcf7(role="form", lang="es-ES", dir="ltr")
+                    .screen-reader-response
+                    form.wpcf7-form(action="/#wpcf7-f271-o1", method="post", novalidate="novalidate")
+                        div(style="display: none;")
+                            input(type="hidden", name="_wpcf7", value="271")
+                            input(type="hidden", name="_wpcf7_version", value="4.9")
+                            input(type="hidden", name="_wpcf7_locale", value="es_ES")
+                            input(type="hidden", name="_wpcf7_unit_tag", value="wpcf7-f271-o1")
+                            input(type="hidden", name="_wpcf7_container_post", value="0")
+                        p
+                            label
+                                | Nombre (requerido)
+                                br
+                                span.wpcf7-form-control-wrap.your-name
+                                    input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required(type="text", name="your-name", value="", size="40", aria-required="true", aria-invalid="false")
+                        p
+                            label
+                                | Tu correo electrónico (requerido)
+                                br
+                                span.wpcf7-form-control-wrap.your-email
+                                    input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email(type="email", name="your-email", value="", size="40", aria-required="true", aria-invalid="false")
+                        p
+                            label
+                                | Asunto
+                                br
+                                span.wpcf7-form-control-wrap.your-subject
+                                    input.wpcf7-form-control.wpcf7-text(type="text", name="your-subject", value="", size="40", aria-invalid="false")
+                        p
+                            label
+                                | Mensaje
+                                br
+                                span.wpcf7-form-control-wrap.your-message
+                                    textarea.wpcf7-form-control.wpcf7-textarea(name="your-message", cols="40", rows="10", aria-invalid="false")
+                        p
+                            input.wpcf7-form-control.wpcf7-submit(type="submit", value="Enviar")
+                        .wpcf7-response-output.wpcf7-display-none
+
 
         main#fullpage
             .section.section_0.process.intro#inicio
@@ -41,7 +81,7 @@ html(lang="en")
                         frameborder="0"
                         allowfullscreen
                     ) 
-                a(href='#').btn Reservar Ahora
+                a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
 
             .section.section_1.process.receipt#recibo
                 .processScene
@@ -58,10 +98,7 @@ html(lang="en")
                         img(src="./assets/icon-receipt@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_recibo' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_recibo' ); ?>
-                    
-                    
-
-                    //a(href='#').btn Reservar Ahora
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
             
             .section.section_2.process.washed#lavado
                 .processScene
@@ -73,6 +110,7 @@ html(lang="en")
                         img(src="./assets/icon-wash@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_lavado' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_lavado' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
 
 
             .section.section_3.process.shampoo#shampoo
@@ -89,6 +127,7 @@ html(lang="en")
                         img(src="./assets/icon-shampoo@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_shampoo' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_shampoo' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
                     
                     
 
@@ -103,6 +142,7 @@ html(lang="en")
                         img(src="./assets/icon-paint@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_pintura' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_pintura' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
                     
                     
 
@@ -116,6 +156,7 @@ html(lang="en")
                         img(src="./assets/icon-shine@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_brillo' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_brillo' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
                     
                     
 
@@ -130,6 +171,7 @@ html(lang="en")
                         img(src="./assets/icon-protection@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_proteccion' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_proteccion' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
                     
                     
 
@@ -146,6 +188,7 @@ html(lang="en")
                         img(src="./assets/icon-interior@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_interior' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_interior' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
                     
                     
 
@@ -160,6 +203,12 @@ html(lang="en")
                         img(src="./assets/icon-motor@2x.png", alt="")
                     h3.processTitle <?php echo get_theme_mod( 'titulo_motor' ); ?>
                     p.processDescription <?php echo get_theme_mod( 'texto_motor' ); ?>
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
+            
+            .section.section_9.process.booking#reserva
+                .processScene
+                    a.btn.bookingButton <?php echo get_theme_mod( 'texto_boton' ); ?>
+                    
                     
                     
 
